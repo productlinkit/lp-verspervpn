@@ -1,0 +1,40 @@
+/* ==========================================================================
+   EMPTY / LOADING / ERROR STATES
+   ========================================================================== */
+.state{
+  display:none;flex-direction:column;align-items:center;text-align:center;gap:var(--space-3);
+  padding:var(--pad-4) 22px;
+}
+.state.on{display:flex;}
+.state .si{
+  width:52px;height:52px;border-radius:16px;display:grid;place-items:center;
+  background:var(--paper-2);color:var(--body);margin-bottom:4px;
+}
+.state .si svg{width:22px;height:22px;}
+.state h3{font-size:var(--fs-h5);}
+.state p{font-size:var(--fs-300);color:var(--body);max-width:44ch;line-height:1.6;}
+.state .btn{margin-top:8px;}
+.navyband .state .si{background:rgba(255,255,255,.1);color:#fff;}
+.navyband .state h3{color:#fff;}
+.navyband .state p{color:rgba(255,255,255,.74);}
+.state--bad .si{background:var(--err-tint);color:var(--err-text);}
+
+/* skeleton rows — a placeholder with the shape of the thing that is coming,
+   not a spinner over an empty box */
+.skel{display:none;flex-direction:column;}
+.skel.on{display:flex;}
+.skel-row{
+  display:flex;align-items:center;gap:var(--space-5);
+  padding:var(--pad-1) 6px;border-bottom:1px solid rgba(255,255,255,.13);
+}
+.skel-bar{
+  height:14px;border-radius:999px;
+  background:linear-gradient(90deg,rgba(255,255,255,.08) 25%,rgba(255,255,255,.18) 37%,rgba(255,255,255,.08) 63%);
+  background-size:400% 100%;animation:shim 1.5s ease-in-out infinite;
+}
+@keyframes shim{0%{background-position:100% 0;}100%{background-position:0 0;}}
+.skel-bar.w1{flex:1.4;}
+.skel-bar.w2{flex:.8;}
+.skel-bar.w3{flex:.7;}
+.skel-bar.dot{flex:0 0 40px;height:40px;border-radius:50%;}
+@media(prefers-reduced-motion:reduce){.skel-bar{animation:none;background:rgba(255,255,255,.13);}}

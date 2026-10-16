@@ -1,0 +1,17 @@
+/* ==========================================================================
+   NAVY BAND (full-bleed dark section)
+   ========================================================================== */
+.navyband{position:relative;background:var(--navy);color:#fff;overflow:hidden;}
+.navyband::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);
+  background-size:24px 24px;
+}
+.navyband::after{
+  content:"";position:absolute;right:-6%;bottom:-45%;width:52%;height:130%;pointer-events:none;
+  background:radial-gradient(circle,rgba(37,99,235,.16),transparent 62%);
+}
+.navyband > .wrap{position:relative;z-index:2;}
+.navyband h2{color:#fff;}
+.navyband .eyebrow.is-neutral{color:#fff;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14);}
+.navyband .sec-head .aside{color:rgba(255,255,255,.58);}

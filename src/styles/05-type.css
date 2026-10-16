@@ -1,0 +1,34 @@
+/* ==========================================================================
+   TYPE
+   ========================================================================== */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:var(--space-2);
+  font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--brand-text);background:var(--brand-tint);
+  padding:8px 14px;border-radius:999px;line-height:1;
+  border:1px solid rgba(29,78,216,.22);
+}
+.eyebrow.is-neutral{color:var(--ink);background:rgba(14,18,22,.05);border-color:var(--line-2);}
+.eyebrow .dot{width:5px;height:5px;border-radius:50%;background:currentColor;}
+
+/* headings are Host Grotesk too — stated outright so nothing can inherit past it */
+h1,h2,h3,h4{
+  font-family:var(--font);
+  font-weight:700;letter-spacing:-.032em;line-height:1.03;
+  overflow-wrap:break-word;
+}
+h1{font-size:var(--fs-h1);}
+h2{font-size:var(--fs-h2);line-height:1.06;}
+h3{font-size:var(--fs-h5);letter-spacing:-.02em;line-height:1.2;}
+/* accent word inside a heading — same Host Grotesk, lighter weight. No italics, no second family. */
+.serif{font-weight:300;font-style:normal;letter-spacing:-.026em;}
+.lead{font-size:clamp(16px,1.25vw,18.5px);color:var(--body);line-height:1.6;}
+.small{font-size:var(--fs-300);color:var(--body);}
+/* microcopy, not fine print: 12.5px at 2.74:1 was the "Russia-based" caption the
+   audit flagged. A point bigger and on the contrast-safe token it reads at 5.43:1. */
+.tiny{font-size:var(--fs-200);color:var(--muted);line-height:1.55;}
+.mono{font-variant-numeric:tabular-nums;font-feature-settings:"tnum";}
+
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--space-8);flex-wrap:wrap;margin-bottom:clamp(32px,4vw,54px);}
+.sec-head .col{max-width:640px;display:flex;flex-direction:column;gap:var(--space-5);align-items:flex-start;}
+.sec-head .aside{max-width:330px;color:var(--body);font-size:var(--fs-400);padding-bottom:6px;}

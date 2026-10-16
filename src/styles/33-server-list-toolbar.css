@@ -1,0 +1,7 @@
+/* ==========================================================================
+   SERVER LIST TOOLBAR
+   ========================================================================== */
+.srv-tools{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--space-5);flex-wrap:wrap;margin-bottom:22px;}
+/* the live latency readout can say more than one thing now */
+.rowi .lat b{color:#fff;}
+.rowi.is-busy .lat{color:rgba(255,255,255,.5);}

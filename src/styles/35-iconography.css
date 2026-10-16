@@ -1,0 +1,20 @@
+/* ==========================================================================
+   ICONOGRAPHY — one weight, measured at the screen
+   ==========================================================================
+   Every icon already carried stroke-width="1.8", which looked like a unified
+   set and was not one. stroke-width is expressed in viewBox units, so the
+   thickness that actually reaches the screen is the attribute times
+   (rendered size / viewBox size). The set mixes 16-unit and 24-unit artboards
+   at sizes from 11px to 29px, and measuring what was drawn found sixteen
+   distinct weights from 1.05px to 2.07px — a 1.97x spread. The 16-unit icons
+   drew almost twice as heavy as the 24-unit ones sitting beside them.
+
+   vector-effect:non-scaling-stroke takes the viewBox transform out of the
+   stroke, so the number below is the number of pixels drawn, at every size and
+   on both artboards. 1.45 because that is where most of the set already sat —
+   the correction moves the outliers, not the whole page.
+
+   Targets svg[stroke-width] only, so filled marks like the wordmark and the
+   store badges, which have no stroke, are untouched. */
+svg[stroke-width]{ stroke-width:1.45; }
+svg[stroke-width] *{ vector-effect:non-scaling-stroke; }

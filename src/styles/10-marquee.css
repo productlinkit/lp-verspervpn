@@ -1,0 +1,10 @@
+/* ==========================================================================
+   MARQUEE
+   ========================================================================== */
+.marq{overflow:hidden;border-block:1px solid var(--line-2);padding-block:20px;background:var(--paper);}
+.marq .track{display:flex;gap:0;width:max-content;animation:slide 46s linear infinite;}
+.marq:hover .track{animation-play-state:paused;}
+@keyframes slide{to{transform:translateX(-50%);}}
+.marq .it{display:inline-flex;align-items:center;gap:var(--space-6);padding-inline:26px;font-size:var(--fs-400);font-weight:500;color:var(--body);white-space:nowrap;}
+.marq .it b{font-weight:600;color:var(--ink);}
+.marq .it .sep{width:5px;height:5px;border-radius:50%;background:var(--brand);opacity:.5;}

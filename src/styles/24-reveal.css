@@ -1,0 +1,5 @@
+/* ==========================================================================
+   REVEAL
+   ========================================================================== */
+.up{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0ms);}
+.up.in{opacity:1;transform:none;}

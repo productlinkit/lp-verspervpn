@@ -1,0 +1,11 @@
+/* ==========================================================================
+   FEATURE BAND (wide photo + copy)
+   ========================================================================== */
+.band{position:relative;border-radius:var(--r-xl);overflow:hidden;min-height:clamp(300px,34vw,420px);display:flex;align-items:flex-end;}
+.band .media{position:absolute;inset:0;}
+.band .veil{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(14,18,22,.15),rgba(14,18,22,.86));}
+.band .inner{position:relative;z-index:3;padding:var(--pad-4);color:#fff;max-width:620px;}
+.band h3{font-size:var(--fs-h3);color:#fff;margin-bottom:12px;}
+.band p{color:rgba(255,255,255,.72);font-size:var(--fs-400);}
+.band .addr{margin-top:20px;display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--fs-200);color:rgba(255,255,255,.6);}
+.band .addr svg{width:14px;height:14px;}

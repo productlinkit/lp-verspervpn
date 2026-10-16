@@ -1,0 +1,21 @@
+/* ==========================================================================
+   TARGET SIZE — WCAG 2.5.8 (24×24 minimum)
+   ==========================================================================
+   The footer columns, the invoice download links and the inline `.lnk` buttons
+   measured 17–23px tall, because an inline box takes its height from the font
+   and not from the line-height around it. Standalone links get a real box with
+   a 24px floor; the ones with room to breathe are padded out toward 44px. */
+.fcol a,.acct-menu a,.acct-menu button,.ac-table .dl,.lnk,.auth-row a,
+.link-u,.qp-foot .hint + .link-u,.ac-note a,.auth-fine .lnk{
+  min-height:24px;
+  display:inline-flex;
+  align-items:center;
+}
+/* Footer links have a whole column to themselves. 9px of padding on a 21.75px
+   line box is a 40px row at every width — both the target and the unit the
+   column rhythm below is built from, rather than 44 on desktop and 40 under it. */
+.fcol a{padding-block:9px;min-height:40px;}
+/* an inline link inside running prose is exempt from 2.5.8 (the "inline"
+   exception) but still gets the 24px floor, which costs nothing on a 1.6
+   line-height paragraph */
+.lnk,.auth-row a{padding-block:2px;}

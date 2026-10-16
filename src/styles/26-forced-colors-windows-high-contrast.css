@@ -1,0 +1,13 @@
+/* ==========================================================================
+   FORCED COLORS (Windows High Contrast)
+   ==========================================================================
+   In forced-colors mode the OS replaces the palette wholesale, and anything
+   whose shape came from a background colour rather than a border loses its
+   edge — the buttons, the FAQ rows and the payment-method tiles all flatten
+   into the page. A border in ButtonText restores the boundary the fill was
+   drawing, and the focus ring is re-stated in Highlight because the authored
+   ring colour is one of the things the OS discards. */
+@media (forced-colors: active){
+  .btn, .qitem, .chip, input, select, textarea, .co-method-b{ border:1px solid ButtonText; }
+  :focus-visible{ outline:3px solid Highlight; outline-offset:3px; }
+}

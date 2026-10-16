@@ -1,0 +1,31 @@
+/* ==========================================================================
+   REDUCED MOTION
+   ==========================================================================
+   The old block zeroed durations, which stops things moving but leaves three
+   gaps: the marquee still loops (an infinite animation with a 0s duration just
+   loops faster), `scroll-behavior:smooth` still animates every jump link, and
+   the cursor-following preview still chases the pointer. All three are handled
+   here; the JS side reads the same query and skips its own animations. */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+    /* Delays survived the old reset, and a zeroed duration behind a live delay
+       is not stillness — it is the same wait with nothing to look at during it.
+       The lead/follow offsets in the dialog and the .12s holds on the rail
+       cards would have left elements blank for their delay and then popped. */
+    animation-delay:0s !important;
+    transition-delay:0s !important;
+    scroll-behavior:auto !important;
+  }
+  .up{opacity:1;transform:none;}
+  /* these three exist only as motion, so they stop rather than flicker */
+  .marq .track{animation:none;transform:none;}
+  .conn .bars i{animation:none;height:60%;}
+  .conn .pulse{animation:none;}
+  #peek{display:none;}
+  /* transform-based hover flourishes read as jitter when the transition is gone */
+  .fcol a:hover,.auth-google:hover,.store:hover{transform:none;}
+}

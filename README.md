@@ -1,25 +1,48 @@
-# RusVPN — website redesign concept
+# VesperVPN landing page
 
-Konsep desain ulang halaman utama RusVPN. Satu file statis, tanpa build step:
-seluruh markup, CSS, dan JavaScript ada di dalam [`index.html`](index.html).
+Landing page VesperVPN, dibangun dengan **Vite + React**.
 
 ## Menjalankan secara lokal
 
-Buka `index.html` langsung di browser, atau jalankan server statis apa pun:
-
 ```bash
-npx serve .
-# atau
-python -m http.server 8000
+npm install
+npm run dev        # http://localhost:5173
 ```
 
-## Publish ke GitHub Pages
+## Build
 
-Karena `index.html` sudah berada di root, cukup aktifkan Pages di
-**Settings → Pages → Source: Deploy from a branch → `main` / `(root)`**.
-Halaman akan tersedia di `https://<username>.github.io/<nama-repo>/`.
+```bash
+npm run build      # hasil di dist/
+npm run preview    # cek hasil build
+```
+
+`vite.config.js` memakai `base: './'`, jadi isi `dist/` bisa ditaruh di mana saja.
+
+## Deploy
+
+- **Vercel**: import repo ini. Framework terdeteksi sebagai Vite; build command `npm run build`, output `dist`.
+- **GitHub Pages**: publish isi folder `dist/` (misalnya lewat GitHub Actions).
+
+## Struktur
+
+```
+index.html              head, meta, font; React mount di #root
+src/main.jsx            entry
+src/App.jsx             urutan section + menjalankan script interaksi
+src/components/         satu file per section (Header, Hero, Why, Tech, Servers,
+                        Apps, Pricing, Faq, Cta, Footer…) plus modal Auth,
+                        Checkout, Account, Dialogs
+src/styles/             CSS dipecah per bagian; urutan impor di index.css
+src/lib/interactions.js perilaku halaman (menu, modal, checkout, FAQ, tooltip…)
+src/assets/images/      foto dan screenshot app
+```
+
+Interaksi masih memakai script vanilla aslinya. Script itu dijalankan sekali
+setelah React selesai merender, dan bekerja langsung pada `id`/`class` di
+komponen. Karena itu, `id` dan `class` di komponen jangan diganti tanpa ikut
+mengubah `interactions.js`.
 
 ## Catatan
 
-Ini adalah konsep desain, bukan produk resmi RusVPN. Semua nama dan logo pihak
-ketiga adalah milik pemiliknya masing-masing.
+Ini konsep desain, bukan produk resmi. Semua nama dan logo pihak ketiga milik
+pemiliknya masing-masing.

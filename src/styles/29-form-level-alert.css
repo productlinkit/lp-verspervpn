@@ -1,0 +1,21 @@
+/* ==========================================================================
+   FORM-LEVEL ALERT — WCAG 3.3.1
+   ==========================================================================
+   Per-field errors say what is wrong with a field. This says what is wrong with
+   the attempt: the server refused it, the network dropped, the card bounced.
+   It is a live region, so it is read out without moving focus. */
+.f-alert{
+  display:none;align-items:flex-start;gap:var(--space-3);
+  margin-top:18px;padding:13px 15px;border-radius:12px;
+  font-size:var(--fs-200);line-height:1.5;font-weight:500;
+  border:1px solid transparent;
+}
+.f-alert.on{display:flex;}
+.f-alert svg{width:17px;height:17px;flex:0 0 auto;margin-top:1px;}
+.f-alert--bad{background:#FFF4F4;border-color:rgba(190,26,35,.28);color:var(--err-text);}
+.f-alert--ok{background:var(--green-tint);border-color:rgba(8,112,64,.24);color:var(--green-text);}
+.f-alert--info{background:var(--blue-tint);border-color:rgba(18,53,110,.2);color:#12356E;}
+.f-alert b{font-weight:700;}
+/* a summary that lists what to fix, each entry jumping to its field */
+.f-alert ul{list-style:none;margin-top:6px;display:flex;flex-direction:column;gap:var(--space-1);}
+.f-alert li a{text-decoration:underline;text-underline-offset:2px;font-weight:600;min-height:24px;display:inline-flex;align-items:center;}

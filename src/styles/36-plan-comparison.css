@@ -1,0 +1,40 @@
+/* ==========================================================================
+   PLAN COMPARISON
+   ==========================================================================
+   The segmented switcher shows one plan at a time, which is fine for picking but
+   useless for comparing — the saving only exists relative to the plan you are
+   not looking at. This puts all five side by side with a per-month equivalent,
+   which is the number that actually makes the choice. */
+/* Both are full-width rows of .price-grid rather than siblings of it, so the
+   stacked order on tablet and phone can interleave them with the two cards.
+   The grid's own 14px gap does part of the spacing the margins used to do. */
+.cmp-toggle{grid-column:1/-1;display:flex;justify-content:center;margin-top:clamp(6px,1.3vw,16px);}
+.cmp{
+  grid-column:1/-1;
+  display:none;margin-top:4px;
+  border:1px solid var(--line-2);border-radius:var(--r-lg);background:var(--card);
+  overflow:hidden;
+}
+.cmp.on{display:block;}
+.cmp-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.cmp table{width:100%;border-collapse:collapse;font-size:var(--fs-300);min-width:520px;}
+.cmp th,.cmp td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--line-2);}
+.cmp thead th{
+  font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);font-weight:700;background:var(--paper);
+  position:sticky;top:0;
+}
+.cmp tbody tr:last-child td{border-bottom:0;}
+.cmp tbody tr.is-best{background:var(--green-tint);}
+.cmp .plan{font-weight:700;}
+.cmp .mo{font-variant-numeric:tabular-nums;font-weight:700;font-size:16px;}
+.cmp .tot{font-variant-numeric:tabular-nums;color:var(--body);}
+.cmp .sv{font-weight:700;color:var(--green-text);font-variant-numeric:tabular-nums;}
+.cmp .sv.none{color:var(--muted);font-weight:500;}
+.cmp .pick{white-space:nowrap;}
+.cmp .pick .btn{padding:9px 16px;font-size:var(--fs-200);min-height:40px;}
+.cmp caption{
+  caption-side:top;text-align:left;padding:16px 18px 4px;
+  font-size:var(--fs-200);color:var(--muted);line-height:1.5;
+}
+@media(max-width:560px){.cmp th,.cmp td{padding:13px 14px;}}

@@ -1,0 +1,31 @@
+/* ==========================================================================
+   SEARCH FIELD — shared by the FAQ and the server list
+   ========================================================================== */
+.srch{position:relative;display:flex;align-items:center;width:100%;max-width:400px;}
+.srch svg.mag{position:absolute;left:15px;width:16px;height:16px;color:var(--body);pointer-events:none;}
+.srch input{
+  width:100%;padding:13px 42px 13px 41px;
+  border-radius:999px;border:1px solid var(--line-ui);background:var(--card);
+  font-size:var(--fs-300);min-height:46px;
+  transition:border-color .25s,box-shadow .25s;
+}
+.srch input::placeholder{color:var(--muted);opacity:1;}
+.srch input:focus{border-color:var(--ink);}
+.srch .clr{
+  position:absolute;right:5px;width:36px;height:36px;border-radius:50%;
+  display:none;place-items:center;color:var(--body);
+}
+.srch .clr:hover{background:var(--paper-2);color:var(--ink);}
+.srch .clr svg{width:13px;height:13px;}
+.srch.has .clr{display:grid;}
+/* on the navy band the field has to invert or it vanishes */
+.navyband .srch input{background:rgba(255,255,255,.07);border-color:var(--line-ui-dark);color:#fff;}
+.navyband .srch input::placeholder{color:rgba(255,255,255,.66);}
+.navyband .srch input:focus{border-color:#fff;background:rgba(255,255,255,.12);}
+.navyband .srch svg.mag,.navyband .srch .clr{color:rgba(255,255,255,.8);}
+.navyband .srch .clr:hover{background:rgba(255,255,255,.16);color:#fff;}
+
+/* the count that follows a search — a live region, so filtering is announced
+   rather than silently rearranging the page under a screen-reader user */
+.srch-count{font-size:var(--fs-200);color:var(--muted);margin-top:10px;min-height:20px;}
+.navyband .srch-count{color:rgba(255,255,255,.74);}

@@ -1,0 +1,22 @@
+/* ==========================================================================
+   CONNECTION WIDGET — connected / connecting / failed
+   ==========================================================================
+   The hero card only ever showed success. A privacy product that never draws a
+   failed handshake is hiding the one moment the user most needs a next step. */
+.conn .st.is-connecting{color:var(--amber-text);}
+.conn .st.is-error{color:var(--err-text);}
+.conn .pulse.amber{background:var(--amber);box-shadow:0 0 0 0 rgba(247,144,9,.6);}
+.conn .pulse.red{background:var(--brand);box-shadow:none;animation:none;}
+.conn .conn-act{
+  display:none;width:100%;margin-top:12px;justify-content:center;
+  padding:10px 16px;border-radius:11px;border:1px solid var(--line-ui);
+  font-size:var(--fs-200);font-weight:600;min-height:40px;align-items:center;gap:var(--space-2);
+}
+.conn.is-error .conn-act{display:inline-flex;}
+.conn.is-error .bars{opacity:.3;}
+.conn .conn-act svg{width:14px;height:14px;}
+.conn .conn-act:hover{background:var(--paper);border-color:var(--ink);}
+
+/* The AUDIT / PROOF STRIP rules lived here. Removed with the card itself: a
+   stylesheet that still dresses a component nobody renders is an invitation to
+   render it. The honest status now lives at #audit-status. */
