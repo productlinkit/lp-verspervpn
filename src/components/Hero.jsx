@@ -56,7 +56,7 @@ export default function Hero() {
         </div>
         <div className="stage up" style={{ "--d": "200ms" }}>
           <figure className="media shot">
-            <img src={heroImg} alt="Secure VPN connection on desktop computer" onError={(e) => e.currentTarget.remove()} />
+            <img src={heroImg} alt="Two people smiling and holding phones with VesperVPN open" onError={(e) => e.currentTarget.remove()} />
             {" "}
             <span className="ph">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
