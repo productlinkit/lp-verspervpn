@@ -25,7 +25,8 @@
 .stage .shot{height:clamp(360px,44vw,560px);border-radius:var(--r-xl);box-shadow:var(--shadow-md);}
 /* crop from the bottom, not the middle — keeps the phone in frame on wide screens */
 .stage .shot img{object-position:50% 12%;}
-.stage .shot::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(14,18,22,0) 42%,rgba(14,18,22,.55) 100%);}
+/* navy wash over the whole photo so the people do not steal the focus */
+.stage .shot::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(8,17,46,.38) 0%,rgba(8,17,46,.42) 50%,rgba(8,17,46,.68) 100%),radial-gradient(ellipse at 50% 55%,rgba(27,58,166,.18),rgba(27,58,166,0) 70%);}
 .chip{
   position:absolute;z-index:3;display:inline-flex;align-items:center;gap:var(--space-2);
   padding:11px 17px;border-radius:999px;font-size:var(--fs-200);font-weight:600;line-height:1;
